@@ -1,0 +1,67 @@
+---
+title: "profolio2_draft"
+author: "Zhi Zheng"
+date: "3/13/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+data2 = data %>%
+  mutate(dist = 0)
+name = data %>% 
+  select("Player",`FG%`)
+data2 %>% 
+  ggplot() + 
+  geom_point(aes(`3PA`,`3P%`))+
+  geom_point(data = data2[(data2$dist == min(data2$dist)),], aes(`3PA`,`3P%`), col = 'red')
+name[,1]
+name %>% 
+  ggplot()+
+  geom_histogram(aes(name))
+test = "FG%"
+#data[[type]]
+filter(name,rep(TRUE,nrow(name)))
+overlay_histogram(name,rep(TRUE,nrow(name)))
+colnames(name)[2]
+.data[[colnames(x)[2]]]
+name[[colnames(name)[2]]]
+
+"FG%"
+ggplot(name, aes(x = as.symbol(test))) +
+  geom_histogram()
+
+a = data[1,]
+a = a %>% 
+  pull(Player)
+ID$ID[ID$Player == a][[1]]
+paste("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/",ID$ID[ID$Player == a],".png",sep = "")
+a = a %>% 
+  select(ends_with("Proportion")) %>% 
+  pivot_longer(cols =everything(),names_to = "Shooting Proportion", values_to = "value")
+ggplot(a, aes(x="", y=value, fill = proportion)) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0)
+
+data %>% 
+  filter(`FG%` == min(`FG%`))
+b = unlist(ID$ID[ID$Player == a][[1]])
+str(b)
+str(a)
+```
+
+```{r}
+install.packages('rsconnect')
+rsconnect::setAccountInfo(name='brianzheng',
+			  token='4E63B6A8C16C9932A5CBB92E155AC6DA',
+			  secret='aP4MdIz8cGxwjYj/kkLdW0Vrerar+hL4Q5iDGUCW')
+library(rsconnect)
+rsconnect::deployApp('./shiny_2.Rmd')
+
+library(shiny)
+runApp("Portfolio_2.R")
+```
+
