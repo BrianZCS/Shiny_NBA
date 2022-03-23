@@ -1,5 +1,8 @@
 # Shiny_NBA
 
+## URL TO PLAYWITH
+https://brianzheng.shinyapps.io/shiny_2/?_ga=2.244598789.1640937978.1648018182-1638503067.1648018182
+
 ## Introduction
   I use the same data as in portfolio 1 and analyse the same problem about who is the best three points shooter. The improvement in the shiny app is that the app gives the user the permission to choose specific players and get all their shooting habits and players' pictures.
   
